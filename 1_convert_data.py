@@ -6,6 +6,7 @@ conf = SparkConf()
 conf.setMaster("local[4]")
 conf.setAppName("damu1000")
 conf.set("spark.executor.memory", "2g")
+conf.set("spark.hadoop.validateOutputSpecs", "false")
 
 sc = SparkContext(conf=conf)
 lines = sc.textFile(".//data//TrainingSet.csv")
